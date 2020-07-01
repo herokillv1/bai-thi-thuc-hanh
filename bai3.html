@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+
+<script>
+
+
+
+    function isFibonacci(number) {
+        let a = 0;
+        let b = 1;
+        let temp = 0;
+        if (number < 1) {
+            return false;
+        }
+        if (number === 1) {
+            return true;
+        }
+        while (temp <= number) {
+            temp = a + b;
+            a = b;
+            b = temp;
+            if (temp === number) {
+                return true;
+            }
+        }
+        return false;
+    }
+    function start() {
+        let a = +prompt("Nhập vào số cần kiểm tra");
+        let result = isFibonacci(a);
+        if (result) {
+            return alert("true")
+        }
+        return alert("false")
+    }
+    start();
+
+
+
+
+
+</script>
+
+</body>
+</html>

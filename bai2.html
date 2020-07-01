@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+
+<script>
+
+    function inputArr(a) {
+        let sizeArr;
+        do {
+            sizeArr = +prompt('Nhập kích thước mảng');
+        }while (sizeArr<=0);
+
+
+        for (let i=0;i<sizeArr;i++){
+            a[i] = Math.floor(Math.random()*30);
+        }
+    }
+
+    function displayArr(a) {
+        for (let i=0;i<a.length;i++){
+            document.write(a[i]+' ');
+        }
+    }
+
+    let arr = new Array();
+    inputArr(arr);
+    document.write('<br>');
+    displayArr(arr);
+    document.write('<br>');
+    let x = +prompt('nhập vào số cần xóa') ;
+    function tryRemoveFromArray(a) {
+        for (let i=0;i<a.length;i++){
+            if (x==a[i]){
+                a.splice(i,1);
+            }
+        }
+        return a;
+    }
+    document.write('mảng sau khi xóa số nhập vào là : '+tryRemoveFromArray(arr))
+</script>
+
+</body>
+</html>
